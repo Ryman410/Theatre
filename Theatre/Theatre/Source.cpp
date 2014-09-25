@@ -10,7 +10,7 @@ void initSeating();
 
 
 int total = 0;
-int[] readPrices();
+int readPrices();
 
 int main() {
 	
