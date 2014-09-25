@@ -26,14 +26,14 @@ int main() {
 
 	do {
 		// draw menu
-		cout << "Enter the number of your choice: \n";
+		cout << "Menu\n";
 		cout << "1. Show available seating\n";
 		cout << "2. Purchase tickets\n";
 		cout << "3. Check availability by row\n";
 		cout << "4. Check total availability\n";
 		cout << "5. Check total sales\n";
-		cout << "6. Quit";
-		
+		cout << "6. Quit\n";
+		cout << "Enter the number of your choice: ";
 		// check user input & respond accordingly
 		cin >> userChoice;
 		switch (userChoice) {
@@ -135,9 +135,10 @@ void readPrices() {
 	int userChoice = 0;;
 	do {
 		// get user input
-		cout << "Enter the number of your choice: " << endl;
+		cout << "Prices menu" << endl;
 		cout << "1. Enter prices manually\n";
 		cout << "2. Read prices from file\n";
+		cout << "Enter the number of your choice: ";
 		cin >> userChoice;
 		// decide what to do based upon input
 		switch (userChoice) {
@@ -154,6 +155,7 @@ void readPrices() {
 				cout << "Would you like to save these prices to a file?\n";
 				cout << "1. Yes, save prices to file\n";
 				cout << "2. No, do not save prices to file\n";
+				cout << "Your choice: ";
 				cin >> userChoice;
 
 				// decide what to do based upon user input
@@ -170,14 +172,14 @@ void readPrices() {
 					cout << "Invalid input, please try again.\n";
 					break;
 				}
-			} while (userChoice != 1 || userChoice != 2);
+			} while (userChoice != 1 && userChoice != 2);
 
 			break;
 
 		case 2: // read prices from file
 			inFile.open("prices.txt");
 			for (int i = 0; i < 15; i++) {
-				cin >> prices[i];
+				inFile >> prices[i];
 			}
 			break;
 
