@@ -41,24 +41,24 @@ int main() {
 		// check user input
 		cin >> userChoice;
 		switch (userChoice) {
-		case 1:
+		case 1: // draw chart displaying seating
 			drawSeating();
 			break;
-		case 2:
+		case 2: // purchase tickets
 			purchaseTickets();
 			break;
-		case 3:
+		case 3: // check availability of seating by row
 			checkRowAvail();
 			break;
-		case 4:
+		case 4: //check availibility of seating in entirety
 			checkTotalAvail();
 			break;
-		case 5:
+		case 5: // display total sales
 			cout << "Total sales: $" << total << endl;
 			break;
-		case 6:
+		case 6: // quit
 			break;
-		default:
+		default: // invalid input
 			cout << "Unsupported input. Please try again.\n";
 		}
 	} while (userChoice != 6);
@@ -70,6 +70,7 @@ int main() {
 
 }
 
+// initialize array for seating chart to empty (*)
 void initSeating() {
 	for (int i = 0; i < 30; i++) {
 		for (int j = 0; j < 15; j++) {
@@ -78,12 +79,15 @@ void initSeating() {
 	}
 }
 
-
+// draw diagram of seating
 void drawSeating() {
 	
+	// begin with spaces
 	for (int i = 0; i < 10; i++) {
 		cout << " ";
 	}
+
+	// number columns
 	for (int k = 0; k < 3; k++) {
 
 		for (int i = 0; i < 10; i++) {
@@ -98,6 +102,7 @@ void drawSeating() {
 	}
 	cout << endl;
 
+	// number rows, and print out seating chart
 	for (int i = 1; i < 16; i++) {
 		cout << "Row " << i;
 		if (i < 10) {
@@ -118,6 +123,7 @@ void drawSeating() {
 
 }
 
+// get prices from user or from file
 int readPrices() {
 
 
